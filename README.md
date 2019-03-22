@@ -1,1 +1,1 @@
-[a relative link](user-metadata.md)
+[Full User Metadatas](user-metadata.md)
