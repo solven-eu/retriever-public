@@ -13,13 +13,3 @@
 <div id="income_tax_reference">35000</div>
 <div id="taxable_income">37000m</div>
 <a href="TODO" id="income_notice">AVIS D'IMPOSITION</a>
-
-# #1. The first chapter
-
-#[1] 1. The first chapter
-
-#anchor Any text header 
-
-{: .customClass #custom_id attribute='value' }
-
-## Header with custom ID {: #custom_id }
