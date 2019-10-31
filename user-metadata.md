@@ -14,7 +14,7 @@
 <div id="income_tax_reference">35000</div>
 <div id="taxable_income">37000m</div>
 <a href="https://www.artee.fr/wp-content/uploads/2017/12/Exemple_avis_imposition.pdf" id="income_notice">AVIS D'IMPOSITION</a>
-<br>DE<br><br>
+<br><br>DE<br><br>
 <div class="gender_de">Herr</div>
 <div id="name_de">Hr. LAZELLE BENEDIKT</div>
 <div id="given_name_de">BENEDIKT</div>
