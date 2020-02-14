@@ -1,1 +1,2 @@
-[Full User Metadatas](user-metadata.md)
+Example User Metadatas:
+https://cormoran-io.github.io/retriever-public/user-metadata.html
