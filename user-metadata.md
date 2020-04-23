@@ -1,5 +1,5 @@
-<div class="login_label">Login : </div><input class="login">
-<div class="pass_label">Password : </div><input class="pass">
+<div class="login_label">Login : </div><input class="login" type="text">
+<div class="pass_label">Password : </div><input class="pass" type="password">
 <div class="gender">Monsieur</div>
 <div id="name">MR LACELLE BENOIT</div>
 <div id="given_name">BENOIT</div>
