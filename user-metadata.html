@@ -26,10 +26,10 @@ turnstile.ready(function () {
 </head>
 	<body>
   <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
-    <div id="example-container" class="cf-turnstile" data-sitekey="0x4AAAAAAARGfmnUO4VfkDnw"></div>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAAARGfmnUO4VfkDnw"></div>
 
     <!-- Utilisez le formulaire avec un ID différent de "example-container" -->
-    <form id="login-form" action="/login" method="POST">
+    <form id="example-container" id="login-form" action="/login" method="POST">
         <input type="text" placeholder="username" />
         <input type="password" placeholder="password" autocomplete="current-password" />
         <!-- Vous pouvez supprimer le conteneur div ici, car le captcha est déjà affiché ci-dessus -->
