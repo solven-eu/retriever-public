@@ -2,26 +2,29 @@
 <!-- saved from url=(0084)https://prdmitrustcdnstorage.blob.core.windows.net/cdn/dp/commons/user-metadata.html -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
-<script>// if using synchronous loading, will be called once the DOM is ready
-turnstile.ready(function () {
-    turnstile.render('#example-container', {
-        sitekey: '0x4AAAAAAARGfmnUO4VfkDnw',
-        callback: function(token) {
-            console.log(`Challenge Success ${token}`);
-        },
-    });
-});
-</script>
+    <script>
+        // si vous utilisez un chargement synchrone, cela sera appelé une fois que le DOM est prêt
+        turnstile.ready(function () {
+            turnstile.render('#example-container', {
+                sitekey: '0x4AAAAAAARGfmnUO4VfkDnw',
+                callback: function(token) {
+                    console.log(`Challenge Success ${token}`);
+                },
+            });
+        });
+    </script>
 </head>
 	<body>
+  <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
+    <div id="example-container" class="cf-turnstile" data-sitekey="0x4AAAAAAARGfmnUO4VfkDnw"></div>
 
-	<div class="cf-turnstile" data-sitekey="0x4AAAAAAARGfmnUO4VfkDnw" data-callback="javascriptCallback"></div>
-	<form id="example-container" action="/login" method="POST">
-   <input type="text" placeholder="username"/>
-   <input type="password" placeholder="password"/>
-   <div class="cf-turnstile" data-sitekey="0x4AAAAAAARGfmnUO4VfkDnw"></div>
-   <button type="submit" value="Submit">Log in</button>
-</form>
+    <!-- Utilisez le formulaire avec un ID différent de "example-container" -->
+    <form id="login-form" action="/login" method="POST">
+        <input type="text" placeholder="username" />
+        <input type="password" placeholder="password" />
+        <!-- Vous pouvez supprimer le conteneur div ici, car le captcha est déjà affiché ci-dessus -->
+        <button type="submit" value="Submit">Log in</button>
+    </form>
 	
 <div id="login_label">Login : </div><input id="login" name="login" type="text">
 <div id="pass_label">Password : </div><input id="pass" name="pass" type="text">
