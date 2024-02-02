@@ -3,15 +3,25 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
     <script>
-        // si vous utilisez un chargement synchrone, cela sera appelé une fois que le DOM est prêt
-        turnstile.ready(function () {
-            turnstile.render('#example-container', {
-                sitekey: '0x4AAAAAAARGfmnUO4VfkDnw',
-                callback: function(token) {
-                    console.log(`Challenge Success ${token}`);
-                },
-            });
+        // Si vous utilisez un chargement synchrone, cela sera appelé une fois que le DOM est prêt
+turnstile.ready(function () {
+    // Obtenez l'élément HTML avec l'ID "example-container"
+    var exampleContainer = document.getElementById('example-container');
+
+    // Vérifiez si l'élément existe avant d'appeler turnstile.render
+    if (exampleContainer) {
+        // Utilisez directement l'objet HTMLElement comme conteneur
+        turnstile.render(exampleContainer, {
+            sitekey: '0x4AAAAAAARGfmnUO4VfkDnw',
+            callback: function(token) {
+                console.log(`Challenge Success ${token}`);
+            },
         });
+    } else {
+        console.error('Le conteneur avec l\'ID "example-container" n\'a pas été trouvé.');
+    }
+});
+
     </script>
 </head>
 	<body>
