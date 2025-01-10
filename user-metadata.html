@@ -66,6 +66,15 @@ turnstile.ready(function () {
             });
         }
     </script>
+<script>
+        function downloadAsPDF2() {
+            const element = document.body; // Capture l'ensemble du corps de la page
+            html2pdf()
+                .from(element) // Convertit l'élément en PDF
+                .save('page.pdf'); // Télécharge le fichier PDF
+        }
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
 </head>
 	<body>
   <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
@@ -86,6 +95,8 @@ turnstile.ready(function () {
     <button onclick="downloadAsImage()">Télécharger la page en image</button>
 <p>Cliquez sur le bouton ci-dessous pour télécharger la page en PDF.</p>
     <button onclick="downloadAsPDF()">Télécharger la page en PDF</button>
+<p>Cliquez sur le bouton ci-dessous pour télécharger la page en PDF.</p>
+    <button onclick="downloadAsPDF2()">Télécharger la page en PDF</button>
 <a href="/retriever-public/avisimpotstest.pdf" download id="avisimpotstest">avisimpotstest</a>
 <div id="login_label">Login : </div><input id="login" name="login" type="text">
 <div id="pass_label">Password : </div><input id="pass" name="pass" type="text">
