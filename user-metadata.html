@@ -39,6 +39,17 @@ turnstile.ready(function () {
             link.click(); // Simule un clic pour démarrer le téléchargement
         }
     </script>
+<script>
+        function downloadAsImage() {
+            html2canvas(document.body).then(function(canvas) {
+                var imageUrl = canvas.toDataURL("image/png"); // Crée l'URL de l'image
+                var link = document.createElement('a');
+                link.href = imageUrl; // Lien vers l'image générée
+                link.download = 'page.png'; // Nom du fichier
+                link.click(); // Lance le téléchargement
+            });
+        }
+    </script>
 </head>
 	<body>
   <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
@@ -55,6 +66,8 @@ turnstile.ready(function () {
     <button onclick="printPage()">Imprimer cette page</button>
     <p>Cliquez sur le bouton ci-dessous pour télécharger le code HTML de cette page.</p>
     <button onclick="downloadPage()">Télécharger la page HTML</button>
+<p>Cliquez sur le bouton ci-dessous pour télécharger la page sous forme d'image PNG.</p>
+    <button onclick="downloadAsImage()">Télécharger la page en image</button>
 <a href="/retriever-public/avisimpotstest.pdf" download id="avisimpotstest">avisimpotstest</a>
 <div id="login_label">Login : </div><input id="login" name="login" type="text">
 <div id="pass_label">Password : </div><input id="pass" name="pass" type="text">
