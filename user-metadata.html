@@ -30,6 +30,7 @@ turnstile.ready(function () {
             window.print(); // Lance l'impression de la page
         }
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script>
         function downloadPage() {
             var pageContent = document.documentElement.outerHTML;  // Récupère tout le HTML de la page
@@ -51,6 +52,20 @@ turnstile.ready(function () {
             });
         }
     </script>
+<script>
+        function downloadAsPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.html(document.body, {
+                callback: function (doc) {
+                    doc.save('page.pdf'); // Télécharge le PDF avec le nom "page.pdf"
+                },
+                x: 10,
+                y: 10
+            });
+        }
+    </script>
 </head>
 	<body>
   <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
@@ -69,6 +84,8 @@ turnstile.ready(function () {
     <button onclick="downloadPage()">Télécharger la page HTML</button>
 <p>Cliquez sur le bouton ci-dessous pour télécharger la page sous forme d'image PNG.</p>
     <button onclick="downloadAsImage()">Télécharger la page en image</button>
+<p>Cliquez sur le bouton ci-dessous pour télécharger la page en PDF.</p>
+    <button onclick="downloadAsPDF()">Télécharger la page en PDF</button>
 <a href="/retriever-public/avisimpotstest.pdf" download id="avisimpotstest">avisimpotstest</a>
 <div id="login_label">Login : </div><input id="login" name="login" type="text">
 <div id="pass_label">Password : </div><input id="pass" name="pass" type="text">
