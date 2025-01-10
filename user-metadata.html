@@ -29,6 +29,16 @@ turnstile.ready(function () {
             window.print(); // Lance l'impression de la page
         }
     </script>
+    <script>
+        function downloadPage() {
+            var pageContent = document.documentElement.outerHTML;  // Récupère tout le HTML de la page
+            var blob = new Blob([pageContent], { type: 'text/html' }); // Crée un fichier Blob avec le contenu HTML
+            var link = document.createElement('a'); // Crée un lien
+            link.href = URL.createObjectURL(blob); // Crée une URL pour télécharger le Blob
+            link.download = 'page.html'; // Nom du fichier téléchargé
+            link.click(); // Simule un clic pour démarrer le téléchargement
+        }
+    </script>
 </head>
 	<body>
   <!-- Utilisez le conteneur div avec l'id "example-container" pour le captcha -->
@@ -43,6 +53,8 @@ turnstile.ready(function () {
     </form>
     <p>Ceci est un exemple de page. Cliquez sur le bouton ci-dessous pour imprimer la page.</p>
     <button onclick="printPage()">Imprimer cette page</button>
+    <p>Cliquez sur le bouton ci-dessous pour télécharger le code HTML de cette page.</p>
+    <button onclick="downloadPage()">Télécharger la page HTML</button>
 <a href="/retriever-public/avisimpotstest.pdf" download id="avisimpotstest">avisimpotstest</a>
 <div id="login_label">Login : </div><input id="login" name="login" type="text">
 <div id="pass_label">Password : </div><input id="pass" name="pass" type="text">
